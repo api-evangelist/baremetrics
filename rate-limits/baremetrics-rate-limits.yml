@@ -1,0 +1,28 @@
+name: Baremetrics API Rate Limits
+description: Rate limiting details for the Baremetrics REST API v1.
+url: https://developers.baremetrics.com/reference/rate-limit
+limits:
+  - name: Standard Rate Limit
+    description: Default rate limit applied to all API keys for the Baremetrics API.
+    requests: 3600
+    period: hour
+    perMinute: 60
+    scope: per API key
+
+headers:
+  - name: X-RateLimit-Limit
+    description: The maximum number of requests allowed per hour.
+  - name: X-RateLimit-Remaining
+    description: The number of requests remaining in the current rate limit window.
+
+errorCodes:
+  - code: 429
+    name: Too Many Requests
+    description: Returned when the rate limit is exceeded. Includes a Retry-After header indicating when to retry.
+    header: Retry-After
+
+notes:
+  - Rate limits are 3,600 requests per hour (60 per minute).
+  - Check the X-RateLimit-Limit header in every API response.
+  - To request a higher rate limit, contact Baremetrics support with details about your use case.
+  - Analytics API access (Scale plan only) may have separate limits.

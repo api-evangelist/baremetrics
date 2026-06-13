@@ -1,0 +1,63 @@
+aid: baremetrics
+name: Baremetrics
+description: Baremetrics is a subscription analytics platform providing a REST API for accessing MRR, ARR, churn rate, LTV, customer metrics, and revenue forecasting data from Stripe and other billing sources. It helps subscription businesses track, analyze, and improve financial performance with real-time dashboards and automated reporting.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/baremetrics/refs/heads/main/apis.yml
+created: '2026-06-13'
+modified: '2026-06-13'
+specificationVersion: '0.19'
+tags:
+  - Subscription Analytics
+  - MRR
+  - ARR
+  - Churn Rate
+  - LTV
+  - Revenue
+  - Stripe
+  - Financial Metrics
+  - SaaS
+apis:
+  - aid: baremetrics:baremetrics-api
+    name: Baremetrics API
+    description: REST API for accessing subscription analytics data including MRR, ARR, churn rate, LTV, customer metrics, charges, subscriptions, and revenue forecasting. Requires bearer token authentication using an API key from Baremetrics account settings.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developers.baremetrics.com
+    baseURL: https://api.baremetrics.com/v1
+    tags:
+      - Subscription Analytics
+      - Revenue Metrics
+      - Customer Data
+      - Churn
+      - MRR
+      - ARR
+    properties:
+      - type: Documentation
+        url: https://developers.baremetrics.com/reference/introduction
+      - type: OpenAPI
+        url: https://developers.baremetrics.com/llms.txt
+common:
+  - type: Website
+    url: https://baremetrics.com
+  - type: Documentation
+    url: https://developers.baremetrics.com
+  - type: GitHubOrg
+    url: https://github.com/baremetrics
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/baremetrics
+  - type: Blog
+    url: https://baremetrics.com/blog
+  - type: Pricing
+    url: https://baremetrics.com/pricing
+  - type: StatusPage
+    url: https://status.baremetrics.com
+  - type: X
+    url: https://x.com/baremetrics
+  - type: Plans
+    url: plans/baremetrics-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/baremetrics-rate-limits.yml
+  - type: FinOps
+    url: finops/baremetrics-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

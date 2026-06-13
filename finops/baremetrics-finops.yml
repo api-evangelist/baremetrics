@@ -1,0 +1,64 @@
+name: Baremetrics FinOps
+description: Financial operations considerations for using and integrating with the Baremetrics subscription analytics API.
+url: https://baremetrics.com/pricing
+costDrivers:
+  - name: Plan Tier
+    description: Pricing scales with ARR (Annual Recurring Revenue) range, number of integrations, and feature access.
+    tiers:
+      - name: Launch
+        monthlyPrice: 75
+        arrRange: $0 - $360K
+        integrations: 1
+      - name: Growth
+        monthlyPrice: 255
+        arrRange: $360K - $3.6M
+        integrations: 2
+      - name: Scale
+        monthlyPrice: 1152
+        arrRange: $3.6M+
+        integrations: unlimited
+
+  - name: Add-ons
+    description: Optional features billed separately on top of base plan cost.
+    items:
+      - name: Payment Recovery
+        monthlyPrice: 129
+      - name: Cancellation Insights
+        monthlyPrice: 129
+
+  - name: Analytics API Access
+    description: Programmatic API access to analytics data is only included in the Scale plan ($1,152/month).
+    notes:
+      - Lower tiers (Launch, Growth) do not include Analytics API access.
+      - API access enables pulling MRR, ARR, churn, LTV, and customer metrics programmatically.
+
+optimization:
+  - name: Annual Billing Discount
+    description: Subscribe annually to receive a 35% discount across all plan tiers.
+    discount: 35
+    unit: percent
+
+  - name: Right-size Plan to ARR
+    description: Baremetrics pricing is ARR-based; select the tier matching your actual ARR to avoid overpaying.
+
+  - name: Limit Integrations
+    description: Lower-tier plans include limited integrations (1-2). Audit active integrations before upgrading.
+
+  - name: Addon Audit
+    description: Payment Recovery and Cancellation Insights are optional add-ons. Evaluate ROI before activating.
+
+budgeting:
+  - name: Minimum Monthly Cost
+    amount: 75
+    currency: USD
+    notes: Launch plan base price; API access requires Scale plan at $1,152/month.
+
+  - name: API-Enabled Minimum
+    amount: 1152
+    currency: USD
+    notes: Analytics API access is gated to the Scale plan.
+
+  - name: Maximum Standard Add-ons
+    amount: 258
+    currency: USD
+    notes: Both optional add-ons (Payment Recovery + Cancellation Insights) combined.
