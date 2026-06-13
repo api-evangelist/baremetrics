@@ -1,0 +1,23 @@
+{
+  "@context": "https://schema.org/",
+  "@type": "WebAPI",
+  "name": "Baremetrics API",
+  "description": "REST API for accessing subscription analytics data including MRR, ARR, churn rate, LTV, customer metrics, charges, subscriptions, plans, annotations, and revenue forecasting.",
+  "url": "https://developers.baremetrics.com",
+  "documentation": "https://developers.baremetrics.com/reference/introduction",
+  "termsOfService": "https://baremetrics.com/terms",
+  "provider": {
+    "@type": "Organization",
+    "name": "Baremetrics",
+    "url": "https://baremetrics.com",
+    "sameAs": [
+      "https://github.com/baremetrics",
+      "https://www.linkedin.com/company/baremetrics",
+      "https://x.com/baremetrics"
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://baremetrics.com/pricing"
+  }
+}

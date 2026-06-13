@@ -35,6 +35,8 @@ apis:
         url: https://developers.baremetrics.com/reference/introduction
       - type: OpenAPI
         url: https://developers.baremetrics.com/llms.txt
+      - type: OpenAPI
+        url: openapi/baremetrics-openapi.json
 common:
   - type: Website
     url: https://baremetrics.com
