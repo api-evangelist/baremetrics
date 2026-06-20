@@ -1,7 +1,7 @@
 aid: baremetrics
 name: Baremetrics
 description: Baremetrics is a subscription analytics platform providing a REST API for accessing MRR, ARR, churn rate, LTV, customer metrics, and revenue forecasting data from Stripe and other billing sources. It helps subscription businesses track, analyze, and improve financial performance with real-time dashboards and automated reporting.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/baremetrics/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
@@ -20,7 +20,7 @@ apis:
   - aid: baremetrics:baremetrics-api
     name: Baremetrics API
     description: REST API for accessing subscription analytics data including MRR, ARR, churn rate, LTV, customer metrics, charges, subscriptions, and revenue forecasting. Requires bearer token authentication using an API key from Baremetrics account settings.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://developers.baremetrics.com
     baseURL: https://api.baremetrics.com/v1
     tags:
