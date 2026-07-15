@@ -38,6 +38,8 @@ apis:
       - type: OpenAPI
         url: openapi/baremetrics-openapi.json
 common:
+  - type: AgenticAccess
+    url: agentic-access/baremetrics-agentic-access.yml
   - type: DomainSecurity
     url: security/baremetrics-domain-security.yml
   - type: Authentication
