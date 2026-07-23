@@ -1,0 +1,185 @@
+openapi: 3.1.0
+info:
+  title: Baremetrics Annotations Subscriptions API
+  description: REST API for accessing subscription analytics data including MRR, ARR, churn rate, LTV, customer metrics, charges, subscriptions, plans, annotations, and revenue forecasting. Requires bearer token authentication using an API key from Baremetrics account settings.
+  version: '1.0'
+  contact:
+    url: https://developers.baremetrics.com
+servers:
+- url: https://api.baremetrics.com
+security:
+- bearerAuth: []
+tags:
+- name: Subscriptions
+paths:
+  /v1/{source_id}/subscriptions:
+    get:
+      summary: List Subscriptions
+      description: Returns a list of subscriptions for a given source.
+      operationId: list-subscriptions
+      parameters:
+      - name: source_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: customer_oid
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A list of subscriptions
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  subscriptions:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Subscription'
+      tags:
+      - Subscriptions
+  /v1/{source_id}/subscriptions/{oid}:
+    get:
+      summary: Show Subscription
+      description: Returns a single subscription by its OID.
+      operationId: show-subscription
+      parameters:
+      - name: source_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: oid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A subscription object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  subscription:
+                    $ref: '#/components/schemas/Subscription'
+      tags:
+      - Subscriptions
+components:
+  schemas:
+    Customer:
+      type: object
+      properties:
+        oid:
+          type: string
+          description: Unique identifier for the customer in the source system.
+        source_id:
+          type: string
+          description: The source identifier.
+        source:
+          type: string
+          description: The source name.
+        created:
+          type: integer
+          description: Unix timestamp when the customer was created.
+        email:
+          type: string
+          format: email
+          description: Customer email address.
+        name:
+          type: string
+          description: Customer name.
+        display_image:
+          type: string
+          description: URL to customer's display image.
+        display_name:
+          type: string
+          description: Customer display name.
+        notes:
+          type: string
+          description: Notes about the customer.
+        ltv:
+          type: integer
+          description: Lifetime value in cents.
+    Plan:
+      type: object
+      properties:
+        oid:
+          type: string
+          description: Unique identifier for the plan in the source system.
+        source_id:
+          type: string
+          description: The source identifier.
+        source:
+          type: string
+          description: The source name.
+        name:
+          type: string
+          description: Plan name.
+        interval:
+          type: string
+          description: Billing interval (e.g. month, year).
+        interval_count:
+          type: integer
+          description: Number of intervals between billings.
+        trial_duration:
+          type: integer
+          description: Trial duration in days.
+        trial_duration_unit:
+          type: string
+          description: Unit for trial duration.
+        created:
+          type: integer
+          description: Unix timestamp when the plan was created.
+        active_subscriptions:
+          type: integer
+          description: Number of active subscriptions on this plan.
+        amount:
+          type: integer
+          description: Plan amount in cents.
+        currency:
+          type: string
+          description: Currency code.
+    Subscription:
+      type: object
+      properties:
+        oid:
+          type: string
+          description: Unique identifier for the subscription in the source system.
+        source_id:
+          type: string
+          description: The source identifier.
+        source:
+          type: string
+          description: The source name.
+        status:
+          type: string
+          description: Subscription status (e.g. active, canceled, trialing).
+        created:
+          type: integer
+          description: Unix timestamp when the subscription was created.
+        customer:
+          $ref: '#/components/schemas/Customer'
+        plan:
+          $ref: '#/components/schemas/Plan'
+        mrr:
+          type: integer
+          description: Monthly recurring revenue in cents.
+        quantity:
+          type: integer
+          description: Number of units subscribed.
+  securitySchemes:
+    bearerAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      x-bearer-format: bearer
+      x-default: APIKEY
+x-readme:
+  headers: []
+  explorer-enabled: true
+  proxy-enabled: false

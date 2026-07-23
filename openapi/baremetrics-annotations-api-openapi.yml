@@ -1,0 +1,154 @@
+openapi: 3.1.0
+info:
+  title: Baremetrics Annotations API
+  description: REST API for accessing subscription analytics data including MRR, ARR, churn rate, LTV, customer metrics, charges, subscriptions, plans, annotations, and revenue forecasting. Requires bearer token authentication using an API key from Baremetrics account settings.
+  version: '1.0'
+  contact:
+    url: https://developers.baremetrics.com
+servers:
+- url: https://api.baremetrics.com
+security:
+- bearerAuth: []
+tags:
+- name: Annotations
+paths:
+  /v1/annotations:
+    get:
+      summary: List Annotations
+      description: Returns a list of annotations.
+      operationId: list-annotations
+      parameters: []
+      responses:
+        '200':
+          description: A list of annotations
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  annotations:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Annotation'
+      tags:
+      - Annotations
+    post:
+      summary: Create Annotation
+      description: Creates a new annotation.
+      operationId: create-annotation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                annotation:
+                  type: string
+                  description: The annotation text.
+                date:
+                  type: string
+                  format: date
+                  description: The date for the annotation in YYYY-MM-DD format.
+                global:
+                  type: boolean
+                  description: Whether the annotation is global.
+                metric:
+                  type: string
+                  description: The metric this annotation applies to.
+                user_id:
+                  type: integer
+                  description: The user ID creating the annotation.
+              required:
+              - annotation
+              - date
+      responses:
+        '200':
+          description: The created annotation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  annotation:
+                    $ref: '#/components/schemas/Annotation'
+      tags:
+      - Annotations
+  /v1/annotations/{id}:
+    get:
+      summary: Show Annotation
+      description: Returns a single annotation by its ID.
+      operationId: show-annotation
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: An annotation object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  annotation:
+                    $ref: '#/components/schemas/Annotation'
+      tags:
+      - Annotations
+    delete:
+      summary: Delete Annotation
+      description: Deletes an annotation by its ID.
+      operationId: delete-annotation
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '204':
+          description: Annotation deleted
+      tags:
+      - Annotations
+components:
+  schemas:
+    Annotation:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Unique identifier for the annotation.
+        annotation:
+          type: string
+          description: The annotation text.
+        date:
+          type: string
+          format: date
+          description: Date of the annotation.
+        global:
+          type: boolean
+          description: Whether this annotation is global.
+        metric:
+          type: string
+          description: The metric this annotation applies to.
+        user:
+          type: object
+          properties:
+            id:
+              type: integer
+            name:
+              type: string
+            email:
+              type: string
+  securitySchemes:
+    bearerAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      x-bearer-format: bearer
+      x-default: APIKEY
+x-readme:
+  headers: []
+  explorer-enabled: true
+  proxy-enabled: false

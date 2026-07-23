@@ -1,0 +1,79 @@
+openapi: 3.1.0
+info:
+  title: Baremetrics Annotations Events API
+  description: REST API for accessing subscription analytics data including MRR, ARR, churn rate, LTV, customer metrics, charges, subscriptions, plans, annotations, and revenue forecasting. Requires bearer token authentication using an API key from Baremetrics account settings.
+  version: '1.0'
+  contact:
+    url: https://developers.baremetrics.com
+servers:
+- url: https://api.baremetrics.com
+security:
+- bearerAuth: []
+tags:
+- name: Events
+paths:
+  /v1/{source_id}/events:
+    get:
+      summary: List Events
+      description: Returns a list of events for a given source.
+      operationId: list-events
+      parameters:
+      - name: source_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: start
+        in: query
+        description: A unix timestamp for the start of the date range.
+        schema:
+          type: string
+          format: date-time
+      - name: end
+        in: query
+        description: A unix timestamp for the end of the date range.
+        schema:
+          type: string
+          format: date-time
+      responses:
+        '200':
+          description: A list of events
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  events:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Event'
+      tags:
+      - Events
+components:
+  schemas:
+    Event:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the event.
+        type:
+          type: string
+          description: Event type (e.g. subscription.created, subscription.canceled, charge.created).
+        created:
+          type: integer
+          description: Unix timestamp when the event occurred.
+        data:
+          type: object
+          description: Event payload data.
+  securitySchemes:
+    bearerAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      x-bearer-format: bearer
+      x-default: APIKEY
+x-readme:
+  headers: []
+  explorer-enabled: true
+  proxy-enabled: false

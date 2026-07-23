@@ -1,0 +1,175 @@
+openapi: 3.1.0
+info:
+  title: Baremetrics Annotations Charges API
+  description: REST API for accessing subscription analytics data including MRR, ARR, churn rate, LTV, customer metrics, charges, subscriptions, plans, annotations, and revenue forecasting. Requires bearer token authentication using an API key from Baremetrics account settings.
+  version: '1.0'
+  contact:
+    url: https://developers.baremetrics.com
+servers:
+- url: https://api.baremetrics.com
+security:
+- bearerAuth: []
+tags:
+- name: Charges
+paths:
+  /v1/{source_id}/charges:
+    get:
+      summary: List Charges
+      description: Returns a list of charges for a given source.
+      operationId: list-charges
+      parameters:
+      - name: source_id
+        in: path
+        description: Please see Sources for valid source IDs.
+        required: true
+        schema:
+          type: string
+      - name: start
+        in: query
+        description: A unix timestamp for the start of the date range.
+        schema:
+          type: string
+          format: date-time
+      - name: end
+        in: query
+        description: A unix timestamp for the end of the date range.
+        schema:
+          type: string
+          format: date-time
+      - name: subscription_oid
+        in: query
+        schema:
+          type: string
+      - name: customer_oid
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A list of charges
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  charges:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Charge'
+        '400':
+          description: Bad request
+      tags:
+      - Charges
+  /v1/{source_id}/charges/{oid}:
+    get:
+      summary: Show Charge
+      description: Returns a single charge by its OID.
+      operationId: show-charge
+      parameters:
+      - name: source_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: oid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A charge object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  charge:
+                    $ref: '#/components/schemas/Charge'
+      tags:
+      - Charges
+components:
+  schemas:
+    Customer:
+      type: object
+      properties:
+        oid:
+          type: string
+          description: Unique identifier for the customer in the source system.
+        source_id:
+          type: string
+          description: The source identifier.
+        source:
+          type: string
+          description: The source name.
+        created:
+          type: integer
+          description: Unix timestamp when the customer was created.
+        email:
+          type: string
+          format: email
+          description: Customer email address.
+        name:
+          type: string
+          description: Customer name.
+        display_image:
+          type: string
+          description: URL to customer's display image.
+        display_name:
+          type: string
+          description: Customer display name.
+        notes:
+          type: string
+          description: Notes about the customer.
+        ltv:
+          type: integer
+          description: Lifetime value in cents.
+    Charge:
+      type: object
+      properties:
+        oid:
+          type: string
+          description: Unique identifier for the charge in the source system.
+        source_id:
+          type: string
+          description: The source identifier.
+        source:
+          type: string
+          description: The source name (e.g. baremetrics, stripe).
+        status:
+          type: string
+          description: Status of the charge (e.g. paid, failed, refunded).
+        created:
+          type: integer
+          description: Unix timestamp when the charge was created.
+        customer:
+          $ref: '#/components/schemas/Customer'
+        subscription:
+          type: object
+          nullable: true
+        amount:
+          type: integer
+          description: Charge amount in cents.
+        currency:
+          type: string
+          description: Currency code (e.g. USD).
+        original_amount:
+          type: integer
+          description: Original amount in cents before any adjustments.
+        fee:
+          type: integer
+          description: Fee amount in cents.
+        original_fee:
+          type: integer
+          description: Original fee in cents.
+  securitySchemes:
+    bearerAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      x-bearer-format: bearer
+      x-default: APIKEY
+x-readme:
+  headers: []
+  explorer-enabled: true
+  proxy-enabled: false

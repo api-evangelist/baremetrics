@@ -1,0 +1,110 @@
+openapi: 3.1.0
+info:
+  title: Baremetrics Annotations Metrics API
+  description: REST API for accessing subscription analytics data including MRR, ARR, churn rate, LTV, customer metrics, charges, subscriptions, plans, annotations, and revenue forecasting. Requires bearer token authentication using an API key from Baremetrics account settings.
+  version: '1.0'
+  contact:
+    url: https://developers.baremetrics.com
+servers:
+- url: https://api.baremetrics.com
+security:
+- bearerAuth: []
+tags:
+- name: Metrics
+paths:
+  /v1/metrics/{metric}:
+    get:
+      summary: Show Metric
+      description: Returns a single metric summary (e.g. mrr, arr, ltv, customers, arpu, asp, customer_churn_rate, mrr_churn_rate, ltv, avg_sub_length).
+      operationId: show-metric
+      parameters:
+      - name: metric
+        in: path
+        required: true
+        schema:
+          type: string
+          enum:
+          - mrr
+          - arr
+          - ltv
+          - customers
+          - arpu
+          - asp
+          - customer_churn_rate
+          - mrr_churn_rate
+          - avg_sub_length
+          - new_customers
+          - new_mrr
+          - expansion_mrr
+          - contraction_mrr
+          - failed_charges
+          - failed_charges_mrr
+          - reactivations
+          - reactivations_mrr
+      - name: start_date
+        in: query
+        description: Start date in YYYY-MM-DD format.
+        schema:
+          type: string
+          format: date
+      - name: end_date
+        in: query
+        description: End date in YYYY-MM-DD format.
+        schema:
+          type: string
+          format: date
+      responses:
+        '200':
+          description: Metric data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  metric:
+                    $ref: '#/components/schemas/Metric'
+      tags:
+      - Metrics
+components:
+  schemas:
+    Metric:
+      type: object
+      properties:
+        metric:
+          type: string
+          description: Metric name.
+        summary:
+          type: object
+          description: Summary statistics for the metric.
+          properties:
+            current:
+              type: integer
+              description: Current value.
+            previous:
+              type: integer
+              description: Previous period value.
+            trend:
+              type: number
+              description: Percentage change.
+        data:
+          type: array
+          description: Time-series data points.
+          items:
+            type: object
+            properties:
+              date:
+                type: string
+                format: date
+              value:
+                type: integer
+  securitySchemes:
+    bearerAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      x-bearer-format: bearer
+      x-default: APIKEY
+x-readme:
+  headers: []
+  explorer-enabled: true
+  proxy-enabled: false
