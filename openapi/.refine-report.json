@@ -1,0 +1,26 @@
+{
+  "provider": "baremetrics",
+  "sources": [
+    "baremetrics-annotations-api-openapi.yml",
+    "baremetrics-charges-api-openapi.yml",
+    "baremetrics-customers-api-openapi.yml",
+    "baremetrics-events-api-openapi.yml",
+    "baremetrics-metrics-api-openapi.yml",
+    "baremetrics-plans-api-openapi.yml",
+    "baremetrics-subscriptions-api-openapi.yml"
+  ],
+  "outputs": [
+    "baremetrics-annotations-api-openapi.yml",
+    "baremetrics-charges-api-openapi.yml",
+    "baremetrics-customers-api-openapi.yml",
+    "baremetrics-events-api-openapi.yml",
+    "baremetrics-metrics-api-openapi.yml",
+    "baremetrics-plans-api-openapi.yml",
+    "baremetrics-subscriptions-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
