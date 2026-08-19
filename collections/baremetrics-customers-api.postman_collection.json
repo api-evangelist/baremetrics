@@ -1,0 +1,272 @@
+{
+  "item": [
+    {
+      "id": "741904cc-c1d3-490c-9d22-f21bf361f600",
+      "name": "Customers",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "df7d46c6-c657-4344-9bd1-fa5ed1d54c25",
+          "name": "List Customers",
+          "request": {
+            "name": "List Customers",
+            "description": {
+              "content": "Returns a list of customers for a given source.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                ":source_id",
+                "customers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "source_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9f46e50e-ddba-4efd-b9f5-00c68fe07455",
+              "name": "A list of customers",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    ":source_id",
+                    "customers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "source_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"customers\": [\n    {\n      \"oid\": \"string\",\n      \"source_id\": \"string\",\n      \"source\": \"string\",\n      \"created\": 1963,\n      \"email\": \"EnpWQp6@AGSRWsYJngzrCG.gk\",\n      \"name\": \"string\",\n      \"display_image\": \"string\",\n      \"display_name\": \"string\",\n      \"notes\": \"string\",\n      \"ltv\": 8061\n    },\n    {\n      \"oid\": \"string\",\n      \"source_id\": \"string\",\n      \"source\": \"string\",\n      \"created\": 9506,\n      \"email\": \"A7VczZ@lnslpzyoULERNkDKzeNUjZ.df\",\n      \"name\": \"string\",\n      \"display_image\": \"string\",\n      \"display_name\": \"string\",\n      \"notes\": \"string\",\n      \"ltv\": 1068\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cae11224-79c7-49cf-9bb9-068b6e075198",
+          "name": "Show Customer",
+          "request": {
+            "name": "Show Customer",
+            "description": {
+              "content": "Returns a single customer by their OID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                ":source_id",
+                "customers",
+                ":oid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "source_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "oid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9c7564a2-09ff-47b6-867f-a0165863ae6e",
+              "name": "A customer object",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    ":source_id",
+                    "customers",
+                    ":oid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "source_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "oid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"customer\": {\n    \"oid\": \"string\",\n    \"source_id\": \"string\",\n    \"source\": \"string\",\n    \"created\": 2390,\n    \"email\": \"fHtD@CSIgSTgcRjasVugumppNQgje.jbln\",\n    \"name\": \"string\",\n    \"display_image\": \"string\",\n    \"display_name\": \"string\",\n    \"notes\": \"string\",\n    \"ltv\": 4790\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.baremetrics.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "f5b26e56-e950-4ee0-beba-099660f535f6",
+    "name": "Baremetrics Annotations Customers API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for accessing subscription analytics data including MRR, ARR, churn rate, LTV, customer metrics, charges, subscriptions, plans, annotations, and revenue forecasting. Requires bearer token authentication using an API key from Baremetrics account settings.",
+      "type": "text/plain"
+    }
+  }
+}

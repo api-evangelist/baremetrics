@@ -1,0 +1,272 @@
+{
+  "item": [
+    {
+      "id": "26c86966-3bd3-42a2-82f4-c01fe634e3ee",
+      "name": "Subscriptions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6137f816-1ea2-4c1c-bce4-95b294c9b64b",
+          "name": "List Subscriptions",
+          "request": {
+            "name": "List Subscriptions",
+            "description": {
+              "content": "Returns a list of subscriptions for a given source.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                ":source_id",
+                "subscriptions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "customer_oid",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "source_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "41e7b0d7-0aeb-4027-acac-d6bb0c3a422c",
+              "name": "A list of subscriptions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    ":source_id",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "customer_oid",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "source_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"subscriptions\": [\n    {\n      \"oid\": \"string\",\n      \"source_id\": \"string\",\n      \"source\": \"string\",\n      \"status\": \"string\",\n      \"created\": 3117,\n      \"customer\": {\n        \"oid\": \"string\",\n        \"source_id\": \"string\",\n        \"source\": \"string\",\n        \"created\": 2508,\n        \"email\": \"U39D9ZOe7UT@czdVYbaaODvogDXxWkF.sesw\",\n        \"name\": \"string\",\n        \"display_image\": \"string\",\n        \"display_name\": \"string\",\n        \"notes\": \"string\",\n        \"ltv\": 9671\n      },\n      \"plan\": {\n        \"oid\": \"string\",\n        \"source_id\": \"string\",\n        \"source\": \"string\",\n        \"name\": \"string\",\n        \"interval\": \"string\",\n        \"interval_count\": 8615,\n        \"trial_duration\": 4655,\n        \"trial_duration_unit\": \"string\",\n        \"created\": 7882,\n        \"active_subscriptions\": 159,\n        \"amount\": 2155,\n        \"currency\": \"string\"\n      },\n      \"mrr\": 4896,\n      \"quantity\": 8811\n    },\n    {\n      \"oid\": \"string\",\n      \"source_id\": \"string\",\n      \"source\": \"string\",\n      \"status\": \"string\",\n      \"created\": 9231,\n      \"customer\": {\n        \"oid\": \"string\",\n        \"source_id\": \"string\",\n        \"source\": \"string\",\n        \"created\": 5393,\n        \"email\": \"5FiBTu@vVpxqQDXFYzXXgcYXeSBHFrlwmL.olr\",\n        \"name\": \"string\",\n        \"display_image\": \"string\",\n        \"display_name\": \"string\",\n        \"notes\": \"string\",\n        \"ltv\": 1029\n      },\n      \"plan\": {\n        \"oid\": \"string\",\n        \"source_id\": \"string\",\n        \"source\": \"string\",\n        \"name\": \"string\",\n        \"interval\": \"string\",\n        \"interval_count\": 2555,\n        \"trial_duration\": 8414,\n        \"trial_duration_unit\": \"string\",\n        \"created\": 2155,\n        \"active_subscriptions\": 4813,\n        \"amount\": 5249,\n        \"currency\": \"string\"\n      },\n      \"mrr\": 8704,\n      \"quantity\": 7280\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "75f9e02f-b6e6-4968-b191-8819738b6b49",
+          "name": "Show Subscription",
+          "request": {
+            "name": "Show Subscription",
+            "description": {
+              "content": "Returns a single subscription by its OID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                ":source_id",
+                "subscriptions",
+                ":oid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "source_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "oid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fc933f9a-459a-406a-bcef-97a553d8f718",
+              "name": "A subscription object",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    ":source_id",
+                    "subscriptions",
+                    ":oid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "source_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "oid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"subscription\": {\n    \"oid\": \"string\",\n    \"source_id\": \"string\",\n    \"source\": \"string\",\n    \"status\": \"string\",\n    \"created\": 4340,\n    \"customer\": {\n      \"oid\": \"string\",\n      \"source_id\": \"string\",\n      \"source\": \"string\",\n      \"created\": 4573,\n      \"email\": \"L8c25@ChsCXtRYBDaVihMMVIUEWRBclPRYN.eyyn\",\n      \"name\": \"string\",\n      \"display_image\": \"string\",\n      \"display_name\": \"string\",\n      \"notes\": \"string\",\n      \"ltv\": 8354\n    },\n    \"plan\": {\n      \"oid\": \"string\",\n      \"source_id\": \"string\",\n      \"source\": \"string\",\n      \"name\": \"string\",\n      \"interval\": \"string\",\n      \"interval_count\": 7510,\n      \"trial_duration\": 6475,\n      \"trial_duration_unit\": \"string\",\n      \"created\": 8998,\n      \"active_subscriptions\": 6490,\n      \"amount\": 7886,\n      \"currency\": \"string\"\n    },\n    \"mrr\": 8894,\n    \"quantity\": 5950\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.baremetrics.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "2fd0abfa-8be1-46be-a148-97ce503a2876",
+    "name": "Baremetrics Annotations Subscriptions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for accessing subscription analytics data including MRR, ARR, churn rate, LTV, customer metrics, charges, subscriptions, plans, annotations, and revenue forecasting. Requires bearer token authentication using an API key from Baremetrics account settings.",
+      "type": "text/plain"
+    }
+  }
+}

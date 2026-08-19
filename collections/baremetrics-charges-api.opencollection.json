@@ -1,0 +1,90 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Baremetrics Annotations Charges API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Charges",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Charges",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.baremetrics.com/v1/:source_id/charges",
+            "params": [
+              {
+                "name": "source_id",
+                "value": "",
+                "type": "path",
+                "description": "Please see Sources for valid source IDs."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query",
+                "description": "A unix timestamp for the start of the date range."
+              },
+              {
+                "name": "end",
+                "value": "",
+                "type": "query",
+                "description": "A unix timestamp for the end of the date range."
+              },
+              {
+                "name": "subscription_oid",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customer_oid",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a list of charges for a given source."
+        },
+        {
+          "info": {
+            "name": "Show Charge",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.baremetrics.com/v1/:source_id/charges/:oid",
+            "params": [
+              {
+                "name": "source_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "oid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns a single charge by its OID."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

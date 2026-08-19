@@ -1,0 +1,56 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Baremetrics Annotations Events API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Events",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.baremetrics.com/v1/:source_id/events",
+            "params": [
+              {
+                "name": "source_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query",
+                "description": "A unix timestamp for the start of the date range."
+              },
+              {
+                "name": "end",
+                "value": "",
+                "type": "query",
+                "description": "A unix timestamp for the end of the date range."
+              }
+            ]
+          },
+          "docs": "Returns a list of events for a given source."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

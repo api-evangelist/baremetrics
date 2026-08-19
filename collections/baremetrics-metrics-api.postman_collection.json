@@ -1,0 +1,169 @@
+{
+  "item": [
+    {
+      "id": "2b70d10f-7e9d-4a09-aa01-e2f83735ab8b",
+      "name": "Metrics",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0da80e55-3726-4264-a10a-30c9a07be286",
+          "name": "Show Metric",
+          "request": {
+            "name": "Show Metric",
+            "description": {
+              "content": "Returns a single metric summary (e.g. mrr, arr, ltv, customers, arpu, asp, customer_churn_rate, mrr_churn_rate, ltv, avg_sub_length).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "metrics",
+                ":metric"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "start_date",
+                  "value": "<date>",
+                  "description": "Start date in YYYY-MM-DD format."
+                },
+                {
+                  "disabled": false,
+                  "key": "end_date",
+                  "value": "<date>",
+                  "description": "End date in YYYY-MM-DD format."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "metric",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fd73dac8-ee84-438b-ac2f-5e0e9034ac40",
+              "name": "Metric data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "metrics",
+                    ":metric"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "start_date",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "end_date",
+                      "value": "<date>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "metric",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"metric\": {\n    \"metric\": \"string\",\n    \"summary\": {\n      \"current\": 5751,\n      \"previous\": 9644,\n      \"trend\": 8952.83377105854\n    },\n    \"data\": [\n      {\n        \"date\": \"2010-07-28\",\n        \"value\": 8957\n      },\n      {\n        \"date\": \"2007-01-15\",\n        \"value\": 8728\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.baremetrics.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "22878e8b-722c-466f-94a2-4e7f6edb4b99",
+    "name": "Baremetrics Annotations Metrics API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for accessing subscription analytics data including MRR, ARR, churn rate, LTV, customer metrics, charges, subscriptions, plans, annotations, and revenue forecasting. Requires bearer token authentication using an API key from Baremetrics account settings.",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,367 @@
+{
+  "item": [
+    {
+      "id": "069f92d6-5d85-44e7-866a-819d6c14c769",
+      "name": "Charges",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c005cdfa-76e7-400b-ac2b-904aca574a79",
+          "name": "List Charges",
+          "request": {
+            "name": "List Charges",
+            "description": {
+              "content": "Returns a list of charges for a given source.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                ":source_id",
+                "charges"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "start",
+                  "value": "<dateTime>",
+                  "description": "A unix timestamp for the start of the date range."
+                },
+                {
+                  "disabled": false,
+                  "key": "end",
+                  "value": "<dateTime>",
+                  "description": "A unix timestamp for the end of the date range."
+                },
+                {
+                  "disabled": false,
+                  "key": "subscription_oid",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer_oid",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "source_id",
+                  "description": "(Required) Please see Sources for valid source IDs."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ecbf7605-f723-42c5-b0cc-984c8d0cb301",
+              "name": "A list of charges",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    ":source_id",
+                    "charges"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "start",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "end",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "subscription_oid",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer_oid",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "source_id",
+                      "description": "(Required) Please see Sources for valid source IDs."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"charges\": [\n    {\n      \"oid\": \"string\",\n      \"source_id\": \"string\",\n      \"source\": \"string\",\n      \"status\": \"string\",\n      \"created\": 5062,\n      \"customer\": {\n        \"oid\": \"string\",\n        \"source_id\": \"string\",\n        \"source\": \"string\",\n        \"created\": 9802,\n        \"email\": \"Yeqk@qRMmwheYsKAaezXLgvAArADRVTBTj.aksn\",\n        \"name\": \"string\",\n        \"display_image\": \"string\",\n        \"display_name\": \"string\",\n        \"notes\": \"string\",\n        \"ltv\": 2168\n      },\n      \"subscription\": {},\n      \"amount\": 7879,\n      \"currency\": \"string\",\n      \"original_amount\": 6865,\n      \"fee\": 8553,\n      \"original_fee\": 5999\n    },\n    {\n      \"oid\": \"string\",\n      \"source_id\": \"string\",\n      \"source\": \"string\",\n      \"status\": \"string\",\n      \"created\": 8672,\n      \"customer\": {\n        \"oid\": \"string\",\n        \"source_id\": \"string\",\n        \"source\": \"string\",\n        \"created\": 4117,\n        \"email\": \"NWgTB@MTIjkCJsXBpjZvJVKgmDHRnkWEkuFmeYk.xzv\",\n        \"name\": \"string\",\n        \"display_image\": \"string\",\n        \"display_name\": \"string\",\n        \"notes\": \"string\",\n        \"ltv\": 7333\n      },\n      \"subscription\": {},\n      \"amount\": 9136,\n      \"currency\": \"string\",\n      \"original_amount\": 7170,\n      \"fee\": 8306,\n      \"original_fee\": 3435\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1cd56be0-6028-4d6a-afe2-01d1b94693e8",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    ":source_id",
+                    "charges"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "start",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "end",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "subscription_oid",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer_oid",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "source_id",
+                      "description": "(Required) Please see Sources for valid source IDs."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1cfadd51-af74-4535-afa5-8070cdc2cf5f",
+          "name": "Show Charge",
+          "request": {
+            "name": "Show Charge",
+            "description": {
+              "content": "Returns a single charge by its OID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                ":source_id",
+                "charges",
+                ":oid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "source_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "oid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ec729138-2390-4733-8133-552c6cb5209c",
+              "name": "A charge object",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    ":source_id",
+                    "charges",
+                    ":oid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "source_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "oid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"charge\": {\n    \"oid\": \"string\",\n    \"source_id\": \"string\",\n    \"source\": \"string\",\n    \"status\": \"string\",\n    \"created\": 5817,\n    \"customer\": {\n      \"oid\": \"string\",\n      \"source_id\": \"string\",\n      \"source\": \"string\",\n      \"created\": 2701,\n      \"email\": \"an-k-3YofyCL5@EM.znak\",\n      \"name\": \"string\",\n      \"display_image\": \"string\",\n      \"display_name\": \"string\",\n      \"notes\": \"string\",\n      \"ltv\": 2727\n    },\n    \"subscription\": {},\n    \"amount\": 7619,\n    \"currency\": \"string\",\n    \"original_amount\": 1797,\n    \"fee\": 4636,\n    \"original_fee\": 7982\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.baremetrics.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "2b607800-7bee-4bae-a686-8e772c16b03f",
+    "name": "Baremetrics Annotations Charges API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for accessing subscription analytics data including MRR, ARR, churn rate, LTV, customer metrics, charges, subscriptions, plans, annotations, and revenue forecasting. Requires bearer token authentication using an API key from Baremetrics account settings.",
+      "type": "text/plain"
+    }
+  }
+}

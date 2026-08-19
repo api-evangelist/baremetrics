@@ -1,0 +1,72 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Baremetrics Annotations Customers API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Customers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Customers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.baremetrics.com/v1/:source_id/customers",
+            "params": [
+              {
+                "name": "source_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a list of customers for a given source."
+        },
+        {
+          "info": {
+            "name": "Show Customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.baremetrics.com/v1/:source_id/customers/:oid",
+            "params": [
+              {
+                "name": "source_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "oid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns a single customer by their OID."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

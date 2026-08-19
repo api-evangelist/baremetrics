@@ -1,0 +1,261 @@
+{
+  "item": [
+    {
+      "id": "466ea998-7ea0-46fe-8d8b-2d1fe1538beb",
+      "name": "Plans",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "418938f0-3bc3-47bf-b424-4659c442aa0a",
+          "name": "List Plans",
+          "request": {
+            "name": "List Plans",
+            "description": {
+              "content": "Returns a list of plans for a given source.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                ":source_id",
+                "plans"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "source_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "311baf7c-897a-48d1-ab96-467554799101",
+              "name": "A list of plans",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    ":source_id",
+                    "plans"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "source_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"plans\": [\n    {\n      \"oid\": \"string\",\n      \"source_id\": \"string\",\n      \"source\": \"string\",\n      \"name\": \"string\",\n      \"interval\": \"string\",\n      \"interval_count\": 9866,\n      \"trial_duration\": 3232,\n      \"trial_duration_unit\": \"string\",\n      \"created\": 513,\n      \"active_subscriptions\": 5267,\n      \"amount\": 3346,\n      \"currency\": \"string\"\n    },\n    {\n      \"oid\": \"string\",\n      \"source_id\": \"string\",\n      \"source\": \"string\",\n      \"name\": \"string\",\n      \"interval\": \"string\",\n      \"interval_count\": 6946,\n      \"trial_duration\": 9869,\n      \"trial_duration_unit\": \"string\",\n      \"created\": 6903,\n      \"active_subscriptions\": 3180,\n      \"amount\": 8708,\n      \"currency\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5be9e607-5560-4256-a43c-4252376243c5",
+          "name": "Show Plan",
+          "request": {
+            "name": "Show Plan",
+            "description": {
+              "content": "Returns a single plan by its OID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                ":source_id",
+                "plans",
+                ":oid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "source_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "oid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ca9cef33-6f21-476d-b9f1-30f536a10550",
+              "name": "A plan object",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    ":source_id",
+                    "plans",
+                    ":oid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "source_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "oid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"plan\": {\n    \"oid\": \"string\",\n    \"source_id\": \"string\",\n    \"source\": \"string\",\n    \"name\": \"string\",\n    \"interval\": \"string\",\n    \"interval_count\": 5476,\n    \"trial_duration\": 4172,\n    \"trial_duration_unit\": \"string\",\n    \"created\": 8514,\n    \"active_subscriptions\": 7661,\n    \"amount\": 7800,\n    \"currency\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.baremetrics.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d5d63d6a-796f-45b9-92dd-84c057da0a95",
+    "name": "Baremetrics Annotations Plans API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for accessing subscription analytics data including MRR, ARR, churn rate, LTV, customer metrics, charges, subscriptions, plans, annotations, and revenue forecasting. Requires bearer token authentication using an API key from Baremetrics account settings.",
+      "type": "text/plain"
+    }
+  }
+}
