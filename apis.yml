@@ -28,6 +28,16 @@ tags:
   - Revenue
   - Stripe
   - Financial Metrics
+  - Software-as-a-Service
+tags_raw:
+  - Subscription Analytics
+  - MRR
+  - ARR
+  - Churn Rate
+  - LTV
+  - Revenue
+  - Stripe
+  - Financial Metrics
   - SaaS
 apis:
 - aid: baremetrics:baremetrics-annotations-api
@@ -72,6 +82,8 @@ apis:
   humanURL: https://developers.baremetrics.com
   baseURL: https://api.baremetrics.com/v1
   tags:
+  - Event
+  tags_raw:
   - Events
   properties:
   - type: OpenAPI
@@ -108,6 +120,8 @@ apis:
   humanURL: https://developers.baremetrics.com
   baseURL: https://api.baremetrics.com/v1
   tags:
+  - Subscription
+  tags_raw:
   - Subscriptions
   properties:
   - type: OpenAPI
