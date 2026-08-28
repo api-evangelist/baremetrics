@@ -1,6 +1,18 @@
 aid: baremetrics
 name: Baremetrics
 description: Baremetrics is a subscription analytics platform providing a REST API for accessing MRR, ARR, churn rate, LTV, customer metrics, and revenue forecasting data from Stripe and other billing sources. It helps subscription businesses track, analyze, and improve financial performance with real-time dashboards and automated reporting.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: paid
   onboarding: self-serve
