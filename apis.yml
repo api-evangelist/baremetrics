@@ -59,6 +59,8 @@ apis:
   humanURL: https://developers.baremetrics.com
   baseURL: https://api.baremetrics.com/v1
   tags:
+  - Annotation
+  tags_raw:
   - Annotations
   properties:
   - type: OpenAPI
