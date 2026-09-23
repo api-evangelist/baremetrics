@@ -1,13 +1,7 @@
 {
   "provider": "baremetrics",
   "sources": [
-    "baremetrics-annotations-api-openapi.yml",
-    "baremetrics-charges-api-openapi.yml",
-    "baremetrics-customers-api-openapi.yml",
-    "baremetrics-events-api-openapi.yml",
-    "baremetrics-metrics-api-openapi.yml",
-    "baremetrics-plans-api-openapi.yml",
-    "baremetrics-subscriptions-api-openapi.yml"
+    "_original/baremetrics-openapi.json"
   ],
   "outputs": [
     "baremetrics-annotations-api-openapi.yml",
@@ -21,6 +15,39 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "baremetrics-openapi.json: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "baremetrics-openapi.json: tagged paths GET /v1/{source_id}/charges -> Charges",
+    "baremetrics-openapi.json: tagged paths GET /v1/{source_id}/charges/{oid} -> Charges",
+    "baremetrics-openapi.json: tagged paths GET /v1/{source_id}/customers -> Customers",
+    "baremetrics-openapi.json: tagged paths GET /v1/{source_id}/customers/{oid} -> Customers",
+    "baremetrics-openapi.json: tagged paths GET /v1/{source_id}/subscriptions -> Subscriptions",
+    "baremetrics-openapi.json: tagged paths GET /v1/{source_id}/subscriptions/{oid} -> Subscriptions",
+    "baremetrics-openapi.json: tagged paths GET /v1/{source_id}/events -> Events",
+    "baremetrics-openapi.json: tagged paths GET /v1/metrics/{metric} -> Metrics",
+    "baremetrics-openapi.json: tagged paths GET /v1/{source_id}/plans -> Plans",
+    "baremetrics-openapi.json: tagged paths GET /v1/{source_id}/plans/{oid} -> Plans",
+    "baremetrics-openapi.json: tagged paths GET /v1/annotations -> Annotations",
+    "baremetrics-openapi.json: tagged paths POST /v1/annotations -> Annotations",
+    "baremetrics-openapi.json: tagged paths GET /v1/annotations/{id} -> Annotations",
+    "baremetrics-openapi.json: tagged paths DELETE /v1/annotations/{id} -> Annotations",
+    "baremetrics-openapi.json: declared missing tag: Annotations",
+    "baremetrics-openapi.json: declared missing tag: Charges",
+    "baremetrics-openapi.json: declared missing tag: Customers",
+    "baremetrics-openapi.json: declared missing tag: Events",
+    "baremetrics-openapi.json: declared missing tag: Metrics",
+    "baremetrics-openapi.json: declared missing tag: Plans",
+    "baremetrics-openapi.json: declared missing tag: Subscriptions",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "baremetrics-annotations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "baremetrics-charges-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "baremetrics-customers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "baremetrics-events-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "baremetrics-metrics-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "baremetrics-plans-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "baremetrics-subscriptions-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

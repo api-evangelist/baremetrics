@@ -1,0 +1,1 @@
+{"resource":"https://mcp.baremetrics.com/mcp","authorization_servers":["https://mcp.baremetrics.com"],"scopes_supported":["read","write"],"bearer_methods_supported":["header"]}
