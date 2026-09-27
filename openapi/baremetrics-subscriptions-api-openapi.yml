@@ -71,45 +71,6 @@ paths:
       - Subscriptions
 components:
   schemas:
-    Plan:
-      type: object
-      properties:
-        oid:
-          type: string
-          description: Unique identifier for the plan in the source system.
-        source_id:
-          type: string
-          description: The source identifier.
-        source:
-          type: string
-          description: The source name.
-        name:
-          type: string
-          description: Plan name.
-        interval:
-          type: string
-          description: Billing interval (e.g. month, year).
-        interval_count:
-          type: integer
-          description: Number of intervals between billings.
-        trial_duration:
-          type: integer
-          description: Trial duration in days.
-        trial_duration_unit:
-          type: string
-          description: Unit for trial duration.
-        created:
-          type: integer
-          description: Unix timestamp when the plan was created.
-        active_subscriptions:
-          type: integer
-          description: Number of active subscriptions on this plan.
-        amount:
-          type: integer
-          description: Plan amount in cents.
-        currency:
-          type: string
-          description: Currency code.
     Subscription:
       type: object
       properties:
@@ -172,6 +133,45 @@ components:
         ltv:
           type: integer
           description: Lifetime value in cents.
+    Plan:
+      type: object
+      properties:
+        oid:
+          type: string
+          description: Unique identifier for the plan in the source system.
+        source_id:
+          type: string
+          description: The source identifier.
+        source:
+          type: string
+          description: The source name.
+        name:
+          type: string
+          description: Plan name.
+        interval:
+          type: string
+          description: Billing interval (e.g. month, year).
+        interval_count:
+          type: integer
+          description: Number of intervals between billings.
+        trial_duration:
+          type: integer
+          description: Trial duration in days.
+        trial_duration_unit:
+          type: string
+          description: Unit for trial duration.
+        created:
+          type: integer
+          description: Unix timestamp when the plan was created.
+        active_subscriptions:
+          type: integer
+          description: Number of active subscriptions on this plan.
+        amount:
+          type: integer
+          description: Plan amount in cents.
+        currency:
+          type: string
+          description: Currency code.
   securitySchemes:
     bearerAuth:
       type: apiKey
