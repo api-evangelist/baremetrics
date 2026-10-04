@@ -147,6 +147,9 @@ apis:
   - type: Documentation
     url: https://developers.baremetrics.com/reference/introduction
 common:
+  - type: CapabilityMap
+    url: capabilities/baremetrics-capability-edges.yml
+    name: Baremetrics Business Capability Map
   - type: AgenticAccess
     url: agentic-access/baremetrics-agentic-access.yml
   - type: DomainSecurity
